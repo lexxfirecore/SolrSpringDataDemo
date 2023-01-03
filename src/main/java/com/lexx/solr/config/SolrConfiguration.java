@@ -20,4 +20,9 @@ public class SolrConfiguration {
         return new HttpSolrServer(solrHost);
     }
 
+    @Bean
+    public SolrServer solrServerWithCollectionName(@Value("${solr.host}" + "/" + "${solr.collection}") String solrHostWithCollectionName) {
+        return new HttpSolrServer(solrHostWithCollectionName);
+    }
+
 }
